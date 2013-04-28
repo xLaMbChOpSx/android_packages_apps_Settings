@@ -88,16 +88,6 @@
         android:permissionGroup="android.permission-group.SUPERUSER"
         android:protectionLevel="dangerous" />
 
-    <!-- BEGIN Privacy -->
-    
-    <permission android:label="@string/permlab_receive_kill_task_command" android:name="android.privacy.RECEIVE_TASK_KILL_COMMAND" android:protectionLevel="signature" android:permissionGroup="android.permission-group.PERSONAL_INFO" android:description="@string/permdesc_receive_kill_task_command" />
-    <uses-permission android:name="android.privacy.RECEIVE_TASK_KILL_COMMAND" />
-    
-    <permission android:label="@string/permlab_receive_disable_apps" android:name="android.privacy.RECEIVE_DISABLE_ENABLE_APPLICATIONS" android:protectionLevel="signature" android:permissionGroup="android.permission-group.PERSONAL_INFO" android:description="@string/permdesc_receive_disable_apps" />
-    <uses-permission android:name="android.privacy.RECEIVE_DISABLE_ENABLE_APPLICATIONS" />
-    
-    <!-- END Privacy -->
-
     <application android:label="@string/settings_label"
             android:icon="@mipmap/ic_launcher_settings"
             android:taskAffinity=""
@@ -1776,15 +1766,6 @@
                 <category android:name=".pac.PACLOGO" />
             </intent-filter>
         </activity>
-
-	<!-- PRIVACY BEGIN -->
-	<receiver android:name=".privacy.PrivacyReceiver" android:enabled="true">
-            <intent-filter>
-                <action android:name="com.privacy.pdroid.KILL_TASKS" />
-                <action android:name="com.privacy.pdroid.DISABLE_ENABLE_APPLICATION" />
-            </intent-filter>
-        </receiver>	
-	<!-- PRIVACY END -->
 
     </application>
 </manifest>
